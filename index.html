@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberShield Pro | Cyber Security Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+  <a href="#home" class="logo">
+    🛡️ Cyber<span>Shield</span>
+  </a>
+
+  <nav id="navMenu">
+    <a href="#home">Home</a>
+    <a href="#security">Security</a>
+    <a href="#tools">Tools</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#phishing">Phishing</a>
+    <a href="#tips">Tips</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button id="themeBtn" class="icon-btn">☀️</button>
+    <button id="menuBtn" class="menu-btn">☰</button>
+  </div>
+
+</header>
+
+
+<main>
+
+<!-- ================= HOME ================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="live-badge">
+      <span></span>
+      SECURITY SYSTEM ONLINE
+    </div>
+
+    <h1>
+      Secure Your
+      <strong>Digital World.</strong>
+    </h1>
+
+    <p>
+      CyberShield Pro is an educational cybersecurity dashboard.
+      Check password strength, generate passwords, test your
+      security knowledge and learn about phishing.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#tools" class="primary-btn">
+        Explore Security Tools →
+      </a>
+
+      <a href="#quiz" class="secondary-btn">
+        Take Security Quiz
+      </a>
+
+      <button id="scanBtn" class="secondary-btn">
+        🔎 Security Scan
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="score-card">
+
+    <div class="shield-icon">🛡️</div>
+
+    <p>YOUR SECURITY SCORE</p>
+
+    <div class="score-circle" id="scoreCircle">
+      <span id="securityScore">90%</span>
+    </div>
+
+    <h3 id="securityStatus">
+      Good Protection
+    </h3>
+
+    <div class="score-bar">
+      <span id="scoreBar"></span>
+    </div>
+
+    <small id="scoreUpdated">
+      Ready to scan
+    </small>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SECURITY STATS ================= -->
+
+<section class="stats" id="security">
+
+  <button class="stat-card" data-target="tools">
+
+    <div class="stat-icon cyan">🔐</div>
+
+    <div>
+      <h3 id="passwordStatus">Not Checked</h3>
+      <p>Password Status</p>
+    </div>
+
+  </button>
+
+
+  <button class="stat-card" data-target="phishing">
+
+    <div class="stat-icon purple">🎣</div>
+
+    <div>
+      <h3>12</h3>
+      <p>Threat Alerts</p>
+    </div>
+
+  </button>
+
+
+  <button class="stat-card" data-target="tools">
+
+    <div class="stat-icon green">🛡️</div>
+
+    <div>
+      <h3 id="protectedSystems">24</h3>
+      <p>Protected Systems</p>
+    </div>
+
+  </button>
+
+
+  <button class="stat-card" data-target="tips">
+
+    <div class="stat-icon red">⚠️</div>
+
+    <div>
+      <h3 id="activeRisks">03</h3>
+      <p>Active Risks</p>
+    </div>
+
+  </button>
+
+</section>
+
+
+<!-- ================= TOOLS ================= -->
+
+<section class="section" id="tools">
+
+  <div class="section-heading">
+    <span>01</span>
+
+    <div>
+      <h2>Security Tools</h2>
+      <p>Useful cybersecurity learning tools.</p>
+    </div>
+  </div>
+
+
+  <div class="tools-grid">
+
+
+    <!-- PASSWORD CHECKER -->
+
+    <article class="tool-card">
+
+      <div class="tool-header">
+        <div class="tool-icon">🔐</div>
+        <span>SECURITY TOOL</span>
+      </div>
+
+      <h3>Password Strength Checker</h3>
+
+      <p class="tool-description">
+        Check a demo password locally in your browser.
+      </p>
+
+      <div class="password-input">
+
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Enter password..."
+        >
+
+        <button id="showPassword">
+          👁️
+        </button>
+
+      </div>
+
+      <div class="strength-bar">
+        <span id="strengthProgress"></span>
+      </div>
+
+      <div class="strength-info">
+
+        <strong id="strengthText">
+          Enter password
+        </strong>
+
+        <span id="strengthScore">
+          0/100
+        </span>
+
+      </div>
+
+      <div class="requirements">
+
+        <p id="reqLength">
+          ○ 8+ characters
+        </p>
+
+        <p id="reqUpper">
+          ○ Uppercase letter
+        </p>
+
+        <p id="reqLower">
+          ○ Lowercase letter
+        </p>
+
+        <p id="reqNumber">
+          ○ Number
+        </p>
+
+        <p id="reqSpecial">
+          ○ Special character
+        </p>
+
+      </div>
+
+      <button id="clearPassword" class="mini-btn">
+        Clear
+      </button>
+
+    </article>
+
+
+    <!-- PASSWORD GENERATOR -->
+
+    <article class="tool-card">
+
+      <div class="tool-header">
+        <div class="tool-icon">🎲</div>
+        <span>GENERATOR</span>
+      </div>
+
+      <h3>Password Generator</h3>
+
+      <p class="tool-description">
+        Generate a random strong password.
+      </p>
+
+      <div class="generated-password">
+
+        <input
+          type="text"
+          id="generatedPassword"
+          readonly
+        >
+
+        <button id="copyPassword">
+          📋
+        </button>
+
+      </div>
+
+      <div class="range-row">
+
+        <label>
+          Length:
+          <strong id="lengthValue">16</strong>
+        </label>
+
+        <input
+          type="range"
+          id="passwordLength"
+          min="8"
+          max="30"
+          value="16"
+        >
+
+      </div>
+
+      <button
+        id="generateBtn"
+        class="primary-btn full-btn"
+      >
+        Generate Password
+      </button>
+
+    </article>
+
+
+    <!-- SECURITY SCAN -->
+
+    <article class="tool-card">
+
+      <div class="tool-header">
+        <div class="tool-icon">🔎</div>
+        <span>SECURITY SCAN</span>
+      </div>
+
+      <h3>Quick Security Check</h3>
+
+      <p class="tool-description">
+        Check your basic security habits.
+      </p>
+
+      <div class="check-list">
+
+        <label>
+          <input type="checkbox" class="security-check">
+          I use unique passwords.
+        </label>
+
+        <label>
+          <input type="checkbox" class="security-check">
+          I use 2FA.
+        </label>
+
+        <label>
+          <input type="checkbox" class="security-check">
+          I install security updates.
+        </label>
+
+        <label>
+          <input type="checkbox" class="security-check">
+          I check suspicious links.
+        </label>
+
+        <label>
+          <input type="checkbox" class="security-check">
+          I lock my devices.
+        </label>
+
+      </div>
+
+      <button
+        id="calculateScan"
+        class="primary-btn full-btn"
+      >
+        Calculate My Score
+      </button>
+
+      <div id="scanResult" class="info-panel"></div>
+
+    </article>
+
+
+    <!-- ACCOUNT SECURITY -->
+
+    <article class="tool-card">
+
+      <div class="tool-header">
+        <div class="tool-icon">👤</div>
+        <span>ACCOUNT SAFETY</span>
+      </div>
+
+      <h3>Account Security</h3>
+
+      <p class="tool-description">
+        Click an option to learn more.
+      </p>
+
+      <div class="account-actions">
+
+        <button class="action-btn"
+          data-message="Use a unique password for every important account.">
+          🔑 Password
+        </button>
+
+        <button class="action-btn"
+          data-message="Enable two-factor authentication whenever available.">
+          🛡️ 2FA
+        </button>
+
+        <button class="action-btn"
+          data-message="Review recent login sessions and remove unknown sessions.">
+          🕵️ Sessions
+        </button>
+
+        <button class="action-btn"
+          data-message="Keep your recovery email and phone number updated.">
+          📧 Recovery
+        </button>
+
+      </div>
+
+      <div id="accountResult" class="info-panel">
+        Select an option.
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- ================= THREATS ================= -->
+
+<section class="section" id="threats">
+
+  <div class="section-heading">
+
+    <span>02</span>
+
+    <div>
+      <h2>Threat Overview</h2>
+      <p>Click a threat to learn about it.</p>
+    </div>
+
+  </div>
+
+
+  <div class="threat-box">
+
+    <button class="threat-row threat-button"
+      data-threat="Phishing">
+
+      <div>🎣 <strong>Phishing</strong></div>
+
+      <div class="progress">
+        <span style="width:82%"></span>
+      </div>
+
+      <b>82%</b>
+
+    </button>
+
+
+    <button class="threat-row threat-button"
+      data-threat="Malware">
+
+      <div>🦠 <strong>Malware</strong></div>
+
+      <div class="progress">
+        <span style="width:65%"></span>
+      </div>
+
+      <b>65%</b>
+
+    </button>
+
+
+    <button class="threat-row threat-button"
+      data-threat="Data Breach">
+
+      <div>🔓 <strong>Data Breach</strong></div>
+
+      <div class="progress">
+        <span style="width:48%"></span>
+      </div>
+
+      <b>48%</b>
+
+    </button>
+
+
+    <button class="threat-row threat-button"
+      data-threat="Malicious Links">
+
+      <div>💻 <strong>Malicious Links</strong></div>
+
+      <div class="progress">
+        <span style="width:37%"></span>
+      </div>
+
+      <b>37%</b>
+
+    </button>
+
+  </div>
+
+
+  <div id="threatInfo" class="info-panel">
+    Click a threat to view information.
+  </div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section class="section" id="quiz">
+
+  <div class="section-heading">
+
+    <span>03</span>
+
+    <div>
+      <h2>Cyber Security Quiz</h2>
+      <p>Test your cybersecurity knowledge.</p>
+    </div>
+
+  </div>
+
+
+  <div class="quiz-card">
+
+    <div class="quiz-top">
+
+      <span id="questionNumber">
+        Question 1 of 5
+      </span>
+
+      <span id="quizScore">
+        Score: 0
+      </span>
+
+    </div>
+
+
+    <div class="quiz-progress">
+      <span id="quizProgress"></span>
+    </div>
+
+
+    <h3 id="question">
+      Loading...
+    </h3>
+
+
+    <div id="answers" class="answers"></div>
+
+
+    <div class="quiz-controls">
+
+      <button
+        id="nextQuestion"
+        class="primary-btn"
+      >
+        Next Question →
+      </button>
+
+      <button
+        id="restartQuiz"
+        class="secondary-btn"
+      >
+        Restart Quiz
+      </button>
+
+    </div>
+
+
+    <div id="quizResult" class="quiz-result"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PHISHING ================= -->
+
+<section class="section" id="phishing">
+
+  <div class="section-heading">
+
+    <span>04</span>
+
+    <div>
+      <h2>Phishing Simulator</h2>
+      <p>Identify the warning signs.</p>
+    </div>
+
+  </div>
+
+
+  <div class="phishing-card">
+
+    <div class="email-header">
+
+      <div class="avatar">📧</div>
+
+      <div>
+        <strong>Account Security</strong>
+        <small>
+          security-alert@example-mail.com
+        </small>
+      </div>
+
+      <span>Today, 10:42 AM</span>
+
+    </div>
+
+
+    <div class="email-body">
+
+      <span class="training-label">
+        TRAINING EXAMPLE
+      </span>
+
+      <h3>
+        ⚠️ Urgent Account Verification Required
+      </h3>
+
+      <p>
+        Your account requires immediate verification.
+        Click the button below to avoid losing access.
+      </p>
+
+      <button id="fakeLink" class="fake-link">
+        Verify Account Now
+      </button>
+
+      <ul class="warning-list">
+
+        <li>Urgent pressure to act immediately</li>
+
+        <li>Unexpected verification request</li>
+
+        <li>Sender should be independently verified</li>
+
+      </ul>
+
+    </div>
+
+
+    <div class="phishing-actions">
+
+      <button
+        class="danger-btn"
+        data-answer="phishing"
+      >
+        🚨 This is Phishing
+      </button>
+
+      <button
+        class="safe-btn"
+        data-answer="safe"
+      >
+        ✅ This is Safe
+      </button>
+
+    </div>
+
+
+    <div id="phishingResult" class="result-box"></div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= TIPS ================= -->
+
+<section class="section" id="tips">
+
+  <div class="section-heading">
+
+    <span>05</span>
+
+    <div>
+      <h2>Security Tips</h2>
+      <p>Click a tip to learn more.</p>
+    </div>
+
+  </div>
+
+
+  <div class="tips-grid">
+
+    <button
+      class="tip-card tip-button"
+      data-tip="Use long, unique passwords and avoid reusing the same password.">
+      🔑
+      <h3>Strong Passwords</h3>
+      <p>Use long and unique passwords.</p>
+    </button>
+
+
+    <button
+      class="tip-card tip-button"
+      data-tip="Two-factor authentication adds another verification step to your account.">
+      🔒
+      <h3>Use 2FA</h3>
+      <p>Add another layer of protection.</p>
+    </button>
+
+
+    <button
+      class="tip-card tip-button"
+      data-tip="Check the sender, domain and destination before clicking unexpected links.">
+      📧
+      <h3>Check Emails</h3>
+      <p>Verify unexpected messages.</p>
+    </button>
+
+
+    <button
+      class="tip-card tip-button"
+      data-tip="Keep your operating system, browser and apps updated.">
+      🔄
+      <h3>Update Software</h3>
+      <p>Install security updates.</p>
+    </button>
+
+  </div>
+
+
+  <div id="tipResult" class="info-panel">
+    Click a security tip above.
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">
+    🛡️ CyberShield Pro
+  </div>
+
+  <p>
+    Cyber awareness starts with you.
+  </p>
+
+  <small>
+    © 2026 CyberShield Pro | Educational Project
+  </small>
+
+</footer>
+
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
